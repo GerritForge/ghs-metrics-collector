@@ -81,6 +81,21 @@ class UploadPackPerRepoMetrics implements PostUploadHook {
           }
           return timeSearchingForReuse;
         });
+
+    metricMaker.newCallbackMetric(
+        String.format("ghs/git-upload-pack/time_total/%s", repoName),
+        Long.class,
+        new Description(String.format("total time jgit spent in upload-pack for repo %s", repoName))
+            .setGauge()
+            .setUnit(Units.MILLISECONDS),
+        () -> {
+          PackStatistics packStatistics = lastStats.get();
+          long uploadPackTimeTotal = -1;
+          if (packStatistics != null) {
+            uploadPackTimeTotal = packStatistics.getTimeTotal();
+          }
+          return uploadPackTimeTotal;
+        });
   }
 
   @Override
