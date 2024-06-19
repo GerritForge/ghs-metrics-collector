@@ -16,6 +16,24 @@
       "message": "How about adding an entry about new metric in [metrics-logging.md](https://github.com/GerritForge/ghs-metrics-collector/blob/master/gerrit/ghs-upload-pack-metrics/src/main/resources/Documentation/metrics-logging.md)",
       "revId": "e54fa39e7570711699e1a92bb89b3fd94de291cf",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "877116ad_fcb805c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2024-06-19T17:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a859ce7_7ad29b45",
+      "revId": "e54fa39e7570711699e1a92bb89b3fd94de291cf",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
