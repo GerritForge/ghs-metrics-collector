@@ -36,11 +36,12 @@ class UploadPackMetricsLogger extends PluginLogFile {
 
   void log(String repoName, PackStatistics stats) {
     uploadPackMetricsLogger.info(
-        "{} {} {} {} {}",
+        "{} {} {} {} {} {}",
         repoName,
         stats.getTimeSearchingForReuse(),
         stats.getBitmapIndexMisses(),
         stats.getTimeTotal(),
-        stats.getTotalBytes());
+        stats.getTotalBytes(),
+        stats.getTimeWriting());
   }
 }
