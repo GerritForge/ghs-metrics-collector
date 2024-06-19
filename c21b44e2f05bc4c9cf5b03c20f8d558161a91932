@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5efe03ad_f512aa00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2024-06-19T18:07:07Z",
+      "side": 1,
+      "message": "Verified locally\n```\n# HELP plugins_ghs_upload_pack_metrics_ghs_git_upload_pack_bytes_total_repo Generated from Dropwizard metric import (metric\u003dplugins/ghs-upload-pack-metrics/ghs/git-upload-pack/bytes_total/repo, type\u003dcom.google.gerrit.metrics.dropwizard.CallbackMetricImpl0$$Lambda$333/0x000000080148d598)\n# TYPE plugins_ghs_upload_pack_metrics_ghs_git_upload_pack_bytes_total_repo gauge\nplugins_ghs_upload_pack_metrics_ghs_git_upload_pack_bytes_total_repo 7201.0\n```",
+      "revId": "c21b44e2f05bc4c9cf5b03c20f8d558161a91932",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
