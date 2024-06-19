@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87f324a6_5d2e06e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2024-06-19T18:52:49Z",
+      "side": 1,
+      "message": "Verified with:\n\n```\n➜  ghs-metrics-collector git:(ae57394) curl -s -H\u0027Authorization: Bearer token\u0027 http://localhost:8080/plugins/metrics-reporter-prometheus/metrics | grep -e \u0027ghs_.*writing\u0027\n# HELP plugins_ghs_upload_pack_metrics_ghs_git_upload_pack_time_writing_reppa Generated from Dropwizard metric import (metric\u003dplugins/ghs-upload-pack-metrics/ghs/git-upload-pack/time_writing/reppa, type\u003dcom.google.gerrit.metrics.dropwizard.CallbackMetricImpl0$$Lambda$325/0x000000a001481b00)\n# TYPE plugins_ghs_upload_pack_metrics_ghs_git_upload_pack_time_writing_reppa gauge\nplugins_ghs_upload_pack_metrics_ghs_git_upload_pack_time_writing_reppa 2.0\n```",
+      "revId": "ae57394f374e9dba06102bfdb751efbaf6d68ee9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
