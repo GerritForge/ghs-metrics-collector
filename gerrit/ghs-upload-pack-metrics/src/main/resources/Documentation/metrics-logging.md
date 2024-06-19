@@ -24,3 +24,5 @@ of fields is as follows:
 - bitmapIndexMisses - This metric counts the number of objects that had to be located through an
   object walk because they were not found in the bitmap indices. It's an essential measure for assessing
   the effectiveness of bitmap indices in speeding up object retrieval operations.
+- totalTime - This metric records the total time (in milliseconds) that is spend on fetch/clone
+  end-to-end including transfer time.
