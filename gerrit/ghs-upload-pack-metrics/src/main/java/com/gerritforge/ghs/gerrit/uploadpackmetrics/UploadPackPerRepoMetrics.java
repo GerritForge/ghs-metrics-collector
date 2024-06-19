@@ -96,6 +96,22 @@ class UploadPackPerRepoMetrics implements PostUploadHook {
           }
           return uploadPackTimeTotal;
         });
+
+    metricMaker.newCallbackMetric(
+        String.format("ghs/git-upload-pack/bytes_total/%s", repoName),
+        Long.class,
+        new Description(
+                String.format("total number of bytes written in upload-pack for repo %s", repoName))
+            .setGauge()
+            .setUnit(Units.BYTES),
+        () -> {
+          PackStatistics packStatistics = lastStats.get();
+          long uploadPackBytesTotal = -1;
+          if (packStatistics != null) {
+            uploadPackBytesTotal = packStatistics.getTotalBytes();
+          }
+          return uploadPackBytesTotal;
+        });
   }
 
   @Override

@@ -26,3 +26,5 @@ of fields is as follows:
   the effectiveness of bitmap indices in speeding up object retrieval operations.
 - totalTime - This metric records the total time (in milliseconds) that is spend on fetch/clone
   end-to-end including transfer time.
+- totalBytes - This metric records the total number of bytes written. This size includes the pack
+  header, trailer, thin pack, and reused cached pack(s).
