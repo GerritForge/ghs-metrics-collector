@@ -16,6 +16,29 @@
       "message": "Verified with:\n\n```\n➜  ghs-metrics-collector git:(ae57394) curl -s -H\u0027Authorization: Bearer token\u0027 http://localhost:8080/plugins/metrics-reporter-prometheus/metrics | grep -e \u0027ghs_.*writing\u0027\n# HELP plugins_ghs_upload_pack_metrics_ghs_git_upload_pack_time_writing_reppa Generated from Dropwizard metric import (metric\u003dplugins/ghs-upload-pack-metrics/ghs/git-upload-pack/time_writing/reppa, type\u003dcom.google.gerrit.metrics.dropwizard.CallbackMetricImpl0$$Lambda$325/0x000000a001481b00)\n# TYPE plugins_ghs_upload_pack_metrics_ghs_git_upload_pack_time_writing_reppa gauge\nplugins_ghs_upload_pack_metrics_ghs_git_upload_pack_time_writing_reppa 2.0\n```",
       "revId": "ae57394f374e9dba06102bfdb751efbaf6d68ee9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91074124_6715fc56",
+        "filename": "gerrit/ghs-upload-pack-metrics/src/main/resources/Documentation/metrics-logging.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-20T08:15:46Z",
+      "side": 1,
+      "message": "Nit: wrap long line",
+      "range": {
+        "startLine": 31,
+        "startChar": 95,
+        "endLine": 31,
+        "endChar": 120
+      },
+      "revId": "ae57394f374e9dba06102bfdb751efbaf6d68ee9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
