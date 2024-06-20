@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "005f5e1d_037b9435",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2024-06-20T10:16:29Z",
+      "side": 1,
+      "message": "@luca.milanesio@gmail.com, I have addressed the nit could you please re-approve?",
+      "revId": "0093da1afc94c35bf71d7b236d8a4718ea05fa3b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
