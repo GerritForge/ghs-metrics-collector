@@ -15,9 +15,12 @@
 package com.gerritforge.ghs.gerrit.uploadpackmetrics;
 
 import com.google.gerrit.extensions.systemstatus.ServerInformation;
+import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.util.PluginLogFile;
 import com.google.gerrit.server.util.SystemLog;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.apache.log4j.PatternLayout;
 import org.eclipse.jgit.storage.pack.PackStatistics;
 import org.slf4j.Logger;
@@ -34,14 +37,19 @@ class UploadPackMetricsLogger extends PluginLogFile {
     this.uploadPackMetricsLogger = LoggerFactory.getLogger(UPLOAD_PACK_METRICS_LOG_NAME);
   }
 
-  void log(String repoName, PackStatistics stats) {
+  void log(String repoName, PackStatistics stats, Provider<CurrentUser> currentUserProvider) {
+    String username =
+        currentUserProvider.get() instanceof IdentifiedUser identifiedUser
+            ? identifiedUser.getAccount().getName()
+            : "anonymous";
     uploadPackMetricsLogger.info(
-        "{} {} {} {} {} {}",
+        "{} {} {} {} {} {} {}",
         repoName,
         stats.getTimeSearchingForReuse(),
         stats.getBitmapIndexMisses(),
         stats.getTimeTotal(),
         stats.getTotalBytes(),
-        stats.getTimeWriting());
+        stats.getTimeWriting(),
+        username);
   }
 }
