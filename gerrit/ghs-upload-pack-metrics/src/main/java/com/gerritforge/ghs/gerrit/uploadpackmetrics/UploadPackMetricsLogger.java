@@ -14,14 +14,20 @@
 
 package com.gerritforge.ghs.gerrit.uploadpackmetrics;
 
+import com.google.gerrit.entities.Account;
 import com.google.gerrit.extensions.systemstatus.ServerInformation;
+import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.util.PluginLogFile;
 import com.google.gerrit.server.util.SystemLog;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.apache.log4j.PatternLayout;
 import org.eclipse.jgit.storage.pack.PackStatistics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static com.google.gerrit.entities.Account.UNKNOWN_ACCOUNT_ID;
 
 class UploadPackMetricsLogger extends PluginLogFile {
   static final String UPLOAD_PACK_METRICS_LOG_NAME = "upload_pack_metrics_log";
@@ -34,14 +40,19 @@ class UploadPackMetricsLogger extends PluginLogFile {
     this.uploadPackMetricsLogger = LoggerFactory.getLogger(UPLOAD_PACK_METRICS_LOG_NAME);
   }
 
-  void log(String repoName, PackStatistics stats) {
+  void log(String repoName, PackStatistics stats, Provider<CurrentUser> currentUserProvider) {
+    Account.Id accountId =
+        currentUserProvider.get() instanceof IdentifiedUser identifiedUser
+            ? identifiedUser.getAccount().id()
+            : UNKNOWN_ACCOUNT_ID;
     uploadPackMetricsLogger.info(
-        "{} {} {} {} {} {}",
+        "{} {} {} {} {} {} {}",
         repoName,
         stats.getTimeSearchingForReuse(),
         stats.getBitmapIndexMisses(),
         stats.getTimeTotal(),
         stats.getTotalBytes(),
-        stats.getTimeWriting());
+        stats.getTimeWriting(),
+        accountId);
   }
 }

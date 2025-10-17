@@ -19,8 +19,10 @@ import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.metrics.Description;
 import com.google.gerrit.metrics.Description.Units;
 import com.google.gerrit.metrics.MetricMaker;
+import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Pattern;
@@ -36,19 +38,22 @@ class UploadPackPerRepoMetrics implements PostUploadHook {
   private final AtomicReference<PackStatistics> lastStats = new AtomicReference<>();
   private final Pattern repoNamePattern;
   private final UploadPackMetricsLogger uploadpackMetricsLogger;
+  private final Provider<CurrentUser> currentUserProvider;
 
   @Inject
   UploadPackPerRepoMetrics(
       MetricMaker metricMaker,
       PluginConfigFactory cfgFactory,
       @PluginName String pluginName,
-      UploadPackMetricsLogger uploadPackMetricsLogger) {
+      UploadPackMetricsLogger uploadPackMetricsLogger,
+      Provider<CurrentUser> currentUserProvider) {
     this.repoName = cfgFactory.getFromGerritConfig(pluginName).getString(UPLOAD_PACK_METRICS_REPO);
     log.atInfo().log("Installing metrics for %s", repoName);
 
     this.repoNamePattern =
         Pattern.compile(String.format(" (/a)?/%s(/git-upload-pack| )", repoName));
     this.uploadpackMetricsLogger = uploadPackMetricsLogger;
+    this.currentUserProvider = currentUserProvider;
 
     metricMaker.newCallbackMetric(
         String.format("ghs/git-upload-pack/bitmap_index_misses/%s", repoName),
@@ -140,6 +145,6 @@ class UploadPackPerRepoMetrics implements PostUploadHook {
   }
 
   private void logStats(PackStatistics stats) {
-    uploadpackMetricsLogger.log(repoName, stats);
+    uploadpackMetricsLogger.log(repoName, stats, currentUserProvider);
   }
 }
