@@ -30,3 +30,4 @@ of fields is as follows:
   header, trailer, thin pack, and reused cached pack(s).
 - timeWriting - time jgit needed to write packfile, from start of header until end of trailer.
   The transfer speed can be approximated by dividing total bytes by this value.
+- accountId - account ID executing the upload pack. Set to `0` for anonymous operations.
