@@ -22,6 +22,30 @@
       },
       "revId": "8b75b77db921d32488407d9d0b33b0c3be0b1dd5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1919c02_e0e35812",
+        "filename": "gerrit/ghs-upload-pack-metrics/src/main/java/com/gerritforge/ghs/gerrit/uploadpackmetrics/UploadPackMetricsLogger.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1012541
+      },
+      "writtenOn": "2025-10-20T07:48:46Z",
+      "side": 1,
+      "message": "I initially implemented it using the account name. However, it doesn\u0027t return a consisten value since it has a fallback logic [1]. I switched to account ID to always have a consistent value in the logs.\n\n[1]: https://cs.opensource.google/gerrit/gerrit/gerrit/+/master:java/com/google/gerrit/entities/Account.java;l\u003d178;drc\u003df077dad6a7bae4ee334849e370127ad284d3cd81",
+      "parentUuid": "dabc3e6f_01634c58",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 46
+      },
+      "revId": "8b75b77db921d32488407d9d0b33b0c3be0b1dd5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
