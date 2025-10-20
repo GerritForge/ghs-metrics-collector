@@ -46,6 +46,30 @@
       },
       "revId": "8b75b77db921d32488407d9d0b33b0c3be0b1dd5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acec9c4c_c2f8a6be",
+        "filename": "gerrit/ghs-upload-pack-metrics/src/main/java/com/gerritforge/ghs/gerrit/uploadpackmetrics/UploadPackMetricsLogger.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2025-10-20T10:37:55Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "f1919c02_e0e35812",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 46
+      },
+      "revId": "8b75b77db921d32488407d9d0b33b0c3be0b1dd5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
